@@ -20,3 +20,12 @@ clone the project in an empty folder.
   
 
 Do also read earlier article https://dzone.com/articles/openapi-3-documentation-with-spring-boot  
+
+---
+### Tutoriais
+[API-First Development with Spring Boot and Swagger](https://reflectoring.io/spring-boot-openapi/)
+
+### Accessing generated docs
+[Swagger UI](http://localhost:8080/swagger-ui.html)
+[JSON based API-docs]( http://localhost:8080/v3/api-docs)
+[YAML based API-docs](http://localhost:8080/v3/api-docs.yaml)
