@@ -29,7 +29,7 @@ public class SampleApplication {
 	
 		return new OpenAPI()
 	      .info(new Info()
-	      .title("sample application API")
+	      .title("Sample application API")
 	      .version(appVersion)
 	      .description(appDesciption)
 	      .termsOfService("http://swagger.io/terms/")
