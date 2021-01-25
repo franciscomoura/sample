@@ -11,9 +11,11 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 
+import java.util.Objects;
+
 
 public class Person {
-	private long id;
+	private Long id;
 	private String firstName;
 	@NotNull
 	@NotBlank
@@ -29,28 +31,19 @@ public class Person {
 	@CreditCardNumber
 	private String creditCardNumber;
 
+	public Person() {
+	}
+
 	public String getCreditCardNumber() {
 		return creditCardNumber;
 	}
 
-	public void setCreditCardNumber(String creditCardNumber) {
-		this.creditCardNumber = creditCardNumber;
-	}
-
-	public long getId() {
+	public Long getId() {
 		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public String getEmail1() {
 		return email1;
-	}
-
-	public void setEmail1(String email1) {
-		this.email1 = email1;
 	}
 
 	@Size(min = 2)
@@ -58,31 +51,78 @@ public class Person {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
 	public String getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	public int getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public Person setId(Long id) {
+		this.id = id;
+		return this;
+	}
+
+	public Person setFirstName(String firstName) {
+		this.firstName = firstName;
+		return this;
+	}
+
+	public Person setLastName(String lastName) {
+		this.lastName = lastName;
+		return this;
+	}
+
+	public Person setEmail(String email) {
+		this.email = email;
+		return this;
+	}
+
+	public Person setEmail1(String email1) {
+		this.email1 = email1;
+		return this;
+	}
+
+	public Person setAge(int age) {
 		this.age = age;
+		return this;
+	}
+
+	public Person setCreditCardNumber(String creditCardNumber) {
+		this.creditCardNumber = creditCardNumber;
+		return this;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Person person = (Person) o;
+		return Objects.equals(id, person.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public String toString() {
+		return "Person{" +
+				"id=" + id +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", email='" + email + '\'' +
+				", email1='" + email1 + '\'' +
+				", age=" + age +
+				", creditCardNumber='" + creditCardNumber + '\'' +
+				'}';
 	}
 }
